@@ -14,7 +14,7 @@ allprojects {
 Add the dependency
 ```
 dependencies {
-     implementation 'com.github.p32929:AndroidEasySQL-Library:1.3.2'
+     implementation 'com.github.atikshakur:SugarDB:0.1.2'
 }
 ```
 
