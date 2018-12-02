@@ -35,7 +35,7 @@ After that you can do:
 ## Code example
 ### Initialization, Set Table Name, Add columns, altogether:
 ```
-EasyDB easyDB = EasyDB.init(this, "TEST", null, 1) // TEST is the name of the DATABASE
+SugarDB easyDB = SugarDB.init(this, "TEST", null, 1) // TEST is the name of the DATABASE
                 .setTableName("DEMO TABLE")  // You can ignore this line if you want
                 .addColumn(new Column("C1", new DataType()._text_().unique().done()))
                 .addColumn(new Column("C2", new DataType()._text_().notNull().done()))
@@ -66,7 +66,7 @@ You can call the ```addData()``` in two ways:
 
 Example:
 ```
-boolean done = easyDB.addData(1, "Data1")
+boolean done = sugarDB.addData(1, "Data1")
                 .addData(2, "Data2")
                 .addData(3, "Data3")
                 .doneDataAdding();
@@ -75,7 +75,7 @@ boolean done = easyDB.addData(1, "Data1")
 or
 
 ```
-boolean done = easyDB.addData("C1", "Data1")
+boolean done = sugarDB.addData("C1", "Data1")
                 .addData("C2", "Data2")
                 .addData("C3", "Data3")
                 .doneDataAdding();
@@ -90,14 +90,14 @@ To get all column names as array of ```String``` call ```getAllColumns()``` Meth
 
 Example:
 ```
-String columns[] = easyDB.getAllColumns();
+String columns[] = sugarDB.getAllColumns();
 ```
 ```columns[0]``` contains the value of ```row ID```. Your custom columns will start from ```columns[1]```...
 
 ### Get/Read All Data:
 To get all data as a ```Cursor``` object, call ```getAllData()``` like this:
 
-```Cursor res = easyDB.getAllData();```
+```Cursor res = sugarDB.getAllData();```
 
 Later use a while loop like this:
 
@@ -127,7 +127,7 @@ while (res.moveToNext()) {
 To get all column data from a row, call ```getOneRowData(rowID)```. It will return the data as a Cursor object. You can then retrieve each column data from the cursor.
 Example:
 ```
-Cursor res = easyDB.getOneRowData(1);
+Cursor res = sugarDB.getOneRowData(1);
 if (res != null) {
     res.moveToFirst(); // Because here's only one row data
     String c1 = res.getString(1);
@@ -153,7 +153,7 @@ String valuesToMatch[] = new String[]{valueToSearchInColumn1, valueToSearchInCol
 
 Now call ```matchColumns()``` like this:
 
-```boolean matched = easyDB.matchColumns(columnsToMatch, valuesToMatch);```
+```boolean matched = sugarDB.matchColumns(columnsToMatch, valuesToMatch);```
 
 Thus, it will return a boolean value. So, you can know if your given values are matched or not.
 
@@ -163,7 +163,7 @@ Thus, it will return a boolean value. So, you can know if your given values are 
 To update / Edit, call ```updateData(columnNumber, data)``` method.
 Example:
 ```
-boolean updated = easyDB.updateData(1, "UpdatedData1")
+boolean updated = sugarDB.updateData(1, "UpdatedData1")
                 .updateData(2, "UpdatedData2")
                 .updateData(3, "UpdatedData3")
                 .rowID(id);
@@ -175,16 +175,14 @@ Thus, it will return a boolean value. So, you can know if your data is updated o
 ### Delete data:
 To delete a row data, call ```deleteRow(rowId)``` like this:
 
-```boolean deleted = easyDB.deleteRow(rowId);```
+```boolean deleted = sugarDB.deleteRow(rowId);```
 
 Thus, it will return a boolean value. So, you can know if your data is updated or not...
 
 ### Delete all data from the Table:
 To delete the table and its all data, call ```deleteAllDataFromTable``` like this:
 
-```easyDB.deleteAllDataFromTable();```
-
-Hope you'll enjoy using the library :)
+```sugarDB.deleteAllDataFromTable();```
 
 > Thanks
 
@@ -192,7 +190,7 @@ Hope you'll enjoy using the library :)
 ```
 MIT License
 
-Copyright (c) 2018 Fayaz Bin Salam
+Copyright (c) 2018 Atikur Rahaman Shakur
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
