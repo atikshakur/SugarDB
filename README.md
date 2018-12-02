@@ -138,7 +138,7 @@ if (res != null) {
 ### Match data from multiple columns:
 To check if some values exist or not in the database, first call ```getAllColumns()``` to get all the column names like this:
 
-```String columns[] = easyDB.getAllColumns();```
+```String columns[] = sugarDB.getAllColumns();```
 
 Now, You may create an array of ```String``` defining which columns you want to match with some values, like this:
 
