@@ -35,7 +35,7 @@ After that you can do:
 ## Code example
 ### Initialization, Set Table Name, Add columns, altogether:
 ```
-SugarDB easyDB = SugarDB.init(this, "TEST", null, 1) // TEST is the name of the DATABASE
+SugarDB sugarDB = SugarDB.init(this, "TEST", null, 1) // TEST is the name of the DATABASE
                 .setTableName("DEMO TABLE")  // You can ignore this line if you want
                 .addColumn(new Column("C1", new DataType()._text_().unique().done()))
                 .addColumn(new Column("C2", new DataType()._text_().notNull().done()))
